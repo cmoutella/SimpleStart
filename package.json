@@ -6,7 +6,53 @@
   "author": "Carolina Moutella <ola@carolinamoutella.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack -w"
+    "js:dev": "webpack --mode development",
+    "js:prod": "webpack --mode production",
+    "css:dev": "node-sass --source-map-embed --output-style expanded --output dist/css src/css",
+    "css:prod": "node-sass --output-style compressed --output dist/css src/css",
+    "postcss:dev": "postcss dist/css --replace --use autoprefixer --env development",
+    "postcss:prod": "postcss dist/css --replace --use autoprefixer --use cssnano --env production --no-map",
+    "server": "browser-sync start --server --w",
+    "start": "npm-run-all --parallel server watch",
+    "build": "npm-run-all --parallel *:prod",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "css:dev": {
+      "patterns": "src/css/**",
+      "extensions": [
+        "sass",
+        "scss"
+      ],
+      "quiet": true
+    },
+    "js:dev": {
+      "patterns": "src/js/**",
+      "extensions": [
+        "js",
+        "jsx"
+      ],
+      "quiet": true
+    }
+  },
+  "browserslist": {
+    "production": [
+      "last 2 major versions",
+      "> 1% in US",
+      "> 1% in BR",
+      "Firefox ESR",
+      "not dead"
+    ],
+    "development": [
+      "last 1 major version",
+      "Firefox ESR",
+      "not dead"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -17,6 +63,8 @@
     "css-loader": "^2.1.0",
     "cssnano": "^4.1.8",
     "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "npm-watch": "^0.5.0",
     "postcss": "^7.0.7",
     "postcss-cli": "^6.1.0",
     "sass-loader": "^7.1.0",

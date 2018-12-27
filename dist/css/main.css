@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+  color: red;
+}
+
+section {
+  display: flex;
+}
+
+article {
+  margin: 10px 30px;
+  color: blue;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9jc3MvbWFpbi5zYXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBO0VBQ0ksbUJBQWtCO0VBQ2xCLFdBQVU7Q0FBRzs7QUFFakI7RUFDSSxjQUFhO0NBQUc7O0FBRXBCO0VBQ0ksa0JBQWlCO0VBQ2pCLFlBQVc7Q0FBRyIsImZpbGUiOiJtYWluLmNzcyJ9 */

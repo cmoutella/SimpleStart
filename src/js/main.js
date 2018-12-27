@@ -1,1 +1,1 @@
-document.querySelector("main").innerHTML("Hello Bitches!");
+document.getElementById("titulo").innerHTML = "it's alive";
